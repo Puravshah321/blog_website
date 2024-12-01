@@ -1,0 +1,159 @@
+.carousel img {
+    width: 100%;
+    height: 700px;
+}
+
+.blog-posts .blog-post img,
+.blog-post img {
+    height: 300px;
+}
+
+/* Add these to your CSS file (e.g., styles.css) */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h5 {
+    font-weight: 700;
+    color: #333;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.carousel {
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.carousel-inner .carousel-item:hover img {
+    transform: scale(1.1);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.blog-posts .container {
+    margin-top: 50px;
+}
+
+.blog-post {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 200px;  /* Reduced height for better proportion */
+    object-fit: cover;  /* Ensures the image fills the container while maintaining aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    transition: all 0.3s ease;  /* Smooth zoom effect on hover */
+    margin-bottom: 20px;  /* Add some space between image and content */
+
+}
+
+.blog-post img:hover {
+    transform: scale(1.1);
+}
+
+.down-content {
+    padding: 20px;
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.blog-post .btn-outline-danger {
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.blog-post .btn-outline-danger:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.text-center {
+    color: #E75C5C;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+    color: inherit;
+}
+
+.text-decoration-none:hover {
+    color: #E75C5C;
+}
+
+.carousel-indicators button {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators button.active {
+    background-color: #E75C5C;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Hover effect for the post category */
+.blog-post .text-info {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px;
+    background-color: #E75C5C;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.text-danger {
+    color: #E75C5C !important;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+

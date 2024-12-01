@@ -1,0 +1,345 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+    rel="stylesheet">
+
+  <title>Blogs</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+
+
+  <style>
+    /* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* Sidebar Styling */
+/* Styling the sidebar */
+.filter-sidebar {
+  position: sticky;
+  top: 80px; /* Adjust this as needed to set the distance from the top */
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  height: calc(100vh - 100px); /* Ensures the height covers the viewport */
+}
+
+/* Styling for filter checkboxes */
+.filter-sidebar .form-check {
+  margin-bottom: 12px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.filter-sidebar .form-check:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+/* Styling for the apply filter button */
+.filter-sidebar .btn {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.filter-sidebar .btn:hover {
+  background-color: #e02f2f; /* Adjust as needed */
+  transform: scale(1.05);
+}
+
+/* Styling for category labels */
+.filter-sidebar .form-check-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.filter-sidebar .form-check-input:checked + .form-check-label {
+  color: #e02f2f; /* Highlight color for checked label */
+}
+
+.filter-sidebar .form-check-label:hover {
+  color: #e02f2f; /* Change text color on hover */
+  cursor: pointer;
+}
+
+/* Animation for hover */
+@keyframes hoverAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.filter-sidebar .form-check:hover {
+  animation: hoverAnimation 0.3s ease-in-out;
+}
+
+.form-check-label {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Filter Form Button */
+.btn-primary {
+    background-color: #e73c3c;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #b41e1e;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+  {%include 'header.html'%}
+
+  <div class="container mt-5" >
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'assets/images/img1.jpg' %}" class="d-block w-100" alt="image1">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'assets/images/image2.jpg' %}" class="d-block w-100" alt="image2">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'assets/images/image3.jpg' %}" class="d-block w-100" alt="image3">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'assets/images/image4.jpg' %}" class="d-block w-100" alt="image4">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Left Sidebar for Filters -->
+      <div class="col-lg-3 col-md-4 col-12 mb-4">
+        <div class="filter-sidebar p-4 shadow">
+          <h5>Filter by Category</h5>
+          <form id="filterForm" method="get" action="{% url 'blog' %}">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Nature" id="Nature" name="categories"
+                {% if 'Nature' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="nature">Nature</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Finance" id="Finance" name="categories"
+              {% if 'Finance' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="finance">Finance</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Food" id="Food" name="categories"
+              {% if 'Food' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="food">Food</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Politics" id="Politics" name="categories"
+              {% if 'Politics' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="politics">Politics</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Entertainment" id="Entertainment" name="categories"
+              {% if 'Entertainment' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="entertainment">Entertainment</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Education" id="Education" name="categories"
+              {% if 'Education' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="education">Education</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Technology" id="Technology" name="categories"
+              {% if 'Technology' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="technology">Technology</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Travel" id="Travel" name="categories"
+              {% if 'Travel' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="travel">Travel</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Health" id="Health" name="categories"
+              {% if 'Health' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="health">Health</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Sports" id="Sports" name="categories"
+              {% if 'Sports' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="sports">Sports</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Fashion" id="Fashion" name="categories"
+              {% if 'fashion' in selected_categories %}checked{% endif %}>
+              <label class="form-check-label" for="fashion">Fashion</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Apply Filters</button>
+          </form>
+        </div>
+      </div>
+
+  <div class="col-lg-9 col-md-8 col-12">
+  <section class="blog-posts">
+    <div class="container">
+        <h3 class="text-center" style="margin: 20px; font-size: 40px; color: rgb(231, 92, 92); margin-top:2px;">RECENT POSTS</h3>
+        <hr >
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="all-blog-posts">
+                  <div class="row">
+                    {% if recent_posts %}
+                        {% for post in recent_posts %}
+                        <div class="col-lg-6">
+                          <div class="blog-post">
+                              <div class="blog-thumb">
+                                  {% if post.image %}
+                                      <img src="{{ post.image.url }}" alt="{{ post.postname }}" style="height: 300px;">
+                                  {% else %}
+                                      <img src="{% static 'default_image.jpg' %}" alt="Default image" style="height: 300px;">
+                                  {% endif %}
+                              </div>
+                              <div class="down-content">
+                                  <span>{{ post.category }}</span>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <a href="{% url 'post' post.id %}" class="text-decoration-none text-dark">
+                                          <h5>{{ post.postname }}</h5>
+                                      </a>
+                                      {% if user.is_authenticated %}
+                                          <form method="post" action="{% url 'increaselike' post.id %}" class="mb-0">
+                                              {% csrf_token %}
+                                              <button class="btn" type="submit" style="border: none; background: transparent;">
+                                                  {% if user in post.liked_by.all %}
+                                                      <i class="fas fa-heart" style="color: red;"></i>
+                                                  {% else %}
+                                                      <i class="far fa-heart" style="color: gray;"></i>
+                                                  {% endif %}
+                                                  <span>{{ post.likes }}</span>
+                                              </button>
+                                          </form>
+                                      {% endif %}
+                                  </div>
+                                  <ul class="post-info">
+                                      <li><a href="#">{{ post.user.username }}</a></li>
+                                      <li><a href="#">{{ post.time }}</a></li>
+                                  </ul>
+                                  <p>{{ post.content|truncatewords:50 }}</p>
+                              </div>
+                          </div>
+                      </div>
+                      
+                        {% endfor %}
+                    {% else %}
+                        <p>No blogs available for the selected categories.</p>
+                    {% endif %}
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+  {% include 'footer.html' %}
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+    crossorigin="anonymous"></script>
+
+  <!-- Additional Scripts -->
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  <script src="{% static 'assets/js/owl.js' %}"></script>
+  <script src="{% static 'assets/js/slick.js' %}"></script>
+  <script src="{% static 'assets/js/isotope.js' %}"></script>
+  <script src="{% static 'assets/js/accordions.js' %}"></script>
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {                   //declaring the array outside of the
+      if (!cleared[t.id]) {                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value = '';         // with more chance of typos
+        t.style.color = '#fff';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
